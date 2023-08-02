@@ -1,0 +1,30 @@
+-create database for clothing store
+
+CREATE TABLE clothing (inventory INTEGER, name TEXT, season TEXT, price NUMERIC, sold INTEGER);
+
+INSERT INTO clothing 
+VALUES (6, "tank top", "summer", 13.99, 8), 
+(8, "shorts", "summer", 20, 9),
+(9, "coat", "winter", 50, 5),
+(4, "sundress", "spring", 22, 7),
+(3, "long sleeve shirt", "fall", 14, 6),
+(26, "underwear", "all seasons", 5, 3),
+(25, "bra", "all seasons", 30, 4),
+(30, "socks", "all seasons", 10, 27),
+(11, "crop tops", "summer", 12, 7),
+(13, "camisole", "summer", 8, 3),
+(15, "bathing suits", "summer", 30, 10),
+(13, "jeans", "winter", 40, 10),
+(14, "leggings", "winter", 25, 10),
+(17, "sports bras", "all seasons", 18, 15),
+(22, "hats", "summer", 15, 11);
+
+-order the data from lowest to highest price
+
+SELECT * FROM clothing ORDER BY price asc;
+
+-what are 5 most popular items?
+SELECT item, price, inventory
+FROM clothing
+ORDER BY inventory asc
+LIMIT 5;
