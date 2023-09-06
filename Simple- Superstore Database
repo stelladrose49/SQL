@@ -1,0 +1,18 @@
+List the items with their prices from cheapest to most expensive.
+
+SELECT item_name, price FROM superstore
+ORDER BY price asc;
+
+What is the average price of items sold at this superstore?
+
+SELECT AVG(price) FROM superstore;
+
+What is the price of the cheapest kitchen item sold?
+
+SELECT MIN(price) FROM superstore
+WHERE category = 'Kitchen Supplies';
+
+How many items are for sale in 'Furnishings'?
+
+SELECT COUNT(item_name) AS Furnishing_items, stock_quantity FROM superstore
+WHERE category = 'Furnishings';
