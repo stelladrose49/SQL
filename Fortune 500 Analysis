@@ -1,3 +1,5 @@
+This project utilized data from the Fortune 500 Analysis database stored at http://sqlfiddle.com/#!5/814e4c/7770
+
 Select * from fortune_companies;
 
 Assign all companies in the technology industry a rating as "Excellent", "Great",
