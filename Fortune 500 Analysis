@@ -1,0 +1,35 @@
+Select * from fortune_companies;
+
+Assign all companies in the technology industry a rating as "Excellent", "Great",
+"Good", and "Bad" based on how long the average employee tenure is.
+
+Select company_name,
+CASE
+  WHEN avg_employee_tenure >= 6.5 THEN "Excellent"
+  WHEN avg_employee_tenure >= 5.5 THEN "Great"
+  WHEN avg_employee_tenure >= 4.5 THEN "Good"
+  ELSE "Bad"
+  END AS "Rating of workplace"
+  FROM fortune_companies
+  WHERE industry = 'Technology'; 
+  
+Which industries have an average revenue of over 150 billion and what are their
+revenues?
+
+SELECT industry, ROUND(avg(revenue), 1) as avg_revenue_billions
+FROM fortune_companies
+GROUP BY industry
+HAVING avg_revenue_billions>150;
+
+Which companies have health care benefits AND more than 10 maternity leave weeks?
+
+SELECT company_name, healthcare_benefits, maternity_leave_weeks
+FROM fortune_companies
+WHERE healthcare_benefits = 1
+AND maternity_leave_weeks > 10;
+
+Which company in the retail industry had the least amount of employees?
+
+SELECT company_name, MIN(employees)
+FROM fortune_companies
+WHERE industry = 'Retail';
